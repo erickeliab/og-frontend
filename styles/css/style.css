@@ -8382,11 +8382,11 @@ h1, h2, h3, h4, h5,
     opacity: .5;
     background: #1d2227; }
   .hero-wrap.hero-wrap-2 {
-    height: 400px !important;
+    height: 200px !important;
     position: relative; }
     .hero-wrap.hero-wrap-2 .overlay {
       width: 100%;
-      height: 400px;
+      height: 200px;
       position: absolute;
       top: 0;
       left: 0;
@@ -8395,7 +8395,7 @@ h1, h2, h3, h4, h5,
       content: '';
       opacity: .5; }
     .hero-wrap.hero-wrap-2 .slider-text {
-      height: 400px !important; }
+      height: 200px !important; }
 
 .slider-text {
   height: 600px;

@@ -1,15 +1,18 @@
 import { server } from '../config'
 import ArticleList from '../components/ArticleList'
 import PostList from '../components/posts/PostList'
+import VideoList from '../components/videos/PostList'
 import Header from '../components/Header'
 import Meta from '../components/Meta'
+import Slideshow from '../components/Slideshow'
+import { backend } from '../config'
 
-export default function Home({ posts }) {
-  console.log(posts)
+export default function Home({ posts, other}) {
+  //console.log(posts)
   return (
 	  <>
 	   <Meta title='OG - Home' />
-	  <Header />
+	  <Header slide={other.slideshow} contact={other.contact} />
     <div>
     
       <section class="ftco-intro">
@@ -52,12 +55,18 @@ export default function Home({ posts }) {
     		</div>
     	</div>
     </section>
-      <PostList posts={posts} />
+     
 
       
     </div>
 
-	<section class="ftco-counter ftco-section ftco-no-pt mt-4 ftco-no-pb img" id="section-counter">
+	<PostList posts={posts} smallcaption={'learn'} Caption={'Laserfiche'} />
+	<VideoList posts={[...posts,posts[0]]} smallcaption={'watch'} Caption={'Videos'} />
+	<PostList posts={posts} smallcaption={'stream'} Caption={'Games'}  />
+
+
+
+	  <section class="ftco-counter ftco-section ftco-no-pt mt-4 ftco-no-pb img mb-5" id="section-counter">
     	<div class="container">
     		<div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch counter-wrap ftco-animatee">
@@ -99,83 +108,42 @@ export default function Home({ posts }) {
         </div>
     	</div>
     </section>
-
-
-	
-
-	<section class="ftco-section">
-		<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Watch My</span>
-            <h2>VIDEOS</h2>
-          </div>
-        </div>
-		<div class="container">
-		  <div class="row d-flex">
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<div class="text text-center">
-					<a href="blog-single.html" class="block-20 img d-flex align-items-center" style={{backgroundImage: "url('images/image_1.jpg')"}}>
-						<div class="meta text-center mb-2 d-flex align-items-center justify-content-center">
-						  <div>
-							  <span class="day">02</span>
-							  <span class="mos">June</span>
-							  <span class="yr">2020</span>
-						  </div>
-					  </div>
-					</a>
-				 	</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<div class="text text-center">
-					<a href="blog-single.html" class="block-20 img d-flex align-items-center" style={{backgroundImage: "url('images/image_2.jpg')"}}>
-						<div class="meta text-center mb-2 d-flex align-items-center justify-content-center">
-						  <div>
-							  <span class="day">02</span>
-							  <span class="mos">June</span>
-							  <span class="yr">2020</span>
-						  </div>
-					  </div>
-					</a>
-				 </div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<div class="text text-center">
-					<a href="blog-single.html" class="block-20 img d-flex align-items-center" style={{backgroundImage: "url('images/image_3.jpg')"}}>
-						<div class="meta text-center mb-2 d-flex align-items-center justify-content-center">
-						  <div>
-							  <span class="day">02</span>
-							  <span class="mos">June</span>
-							  <span class="yr">2020</span>
-						  </div>
-					  </div>
-					</a>
-				  </div>
-			  </div>
-			</div>
-			
-		  </div>
-		  </div>
-		</div>
-	  </section>
-
-
 	</>
+
+
+
+
   )
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:1337/posts`)
+  const res = await fetch(`${backend}/posts`)
   const posts = await res.json()
+
+  const slideres = await fetch(`${backend}/slideshow`)
+  const slideshow = await slideres.json()
+
+  const contacts = await fetch(`${backend}/contact`)
+  const contact = await contacts.json()
+
+  const abouts = await fetch(`${backend}/about`)
+  const about = await abouts.json()
+
+  const category = await fetch(`${backend}/categories`)
+  const categories = await category.json()
+
+
 
   return {
     props: {
       posts,
+	  other : {
+		slideshow,
+		contact,
+		about,
+		categories
+	  }
+	  
     },
   }
 }
