@@ -90,6 +90,45 @@ address {
   font-style: normal;
   line-height: inherit; }
 
+  /* pagination styles */
+  .pagination {
+    border-style: var(--primary);
+   
+    padding: 1px 2px;
+  }
+
+.pagination > li {
+  margin: 2px;
+  padding: 2px 5px;
+  border-style: var(--primary);
+  border-color:#e7e4e4;
+  border: solid;
+  color:var(--primary);
+  border-radius: 5px;
+  font-weight: 2px;
+}
+
+.pagination > .next , .pagination > .previous {
+  background-color: var(--primary);
+  color: white
+ 
+}
+
+.pagination > .disabled {
+  color: #73aae0;
+  background-color: var(--white)
+  
+ 
+}
+
+.pagination > .active {
+  
+background-color: var(--primary);
+color: var(--white);
+border-color: var(--primary);
+   
+}
+
 ol,
 ul,
 dl {
@@ -445,6 +484,20 @@ pre {
 .pre-scrollable {
   max-height: 340px;
   overflow-y: scroll; }
+
+#postbody > div > p > img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+}
+
+#postbod > p > img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+}
 
 .container {
   width: 100%;

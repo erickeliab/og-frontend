@@ -7,16 +7,16 @@ const Meta = ({ title, keywords, description }) => {
       <meta name='keywords' content={keywords} />
       <meta name='description' content={description} />
       <meta charSet='utf-8' />
-      <link rel='icon' href='/favicon.ico' />
+      <link rel='icon' href='http://localhost:1337/uploads/Group_4_5d759c3286.png' />
       <title>{title}</title>
     </Head>
   )
 }
 
 Meta.defaultProps = {
-  title: 'WebDev Newz',
-  keywords: 'web development, programming',
-  description: 'Get the latest news in web dev',
+  title: 'The OG Experience',
+  keywords: 'laserfiche, gaming, video tutorials',
+  description: 'Get contents concerning laserfiche ecm from an experienced engineer',
 }
 
 export default Meta

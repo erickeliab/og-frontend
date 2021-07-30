@@ -15,7 +15,7 @@ console.log(contact);
      <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center">
-          <div class="col-md-6 ftco-animate d-flex align-items-end">
+          <div class="col-md-6 ftco-animatee d-flex align-items-end">
           	<div class="text w-100">
 	            <h1 class="mb-4">{slide.Title}</h1>
 	            <p class="mb-4">{slide.Description}</p>

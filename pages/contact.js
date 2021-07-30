@@ -73,7 +73,7 @@ class contact extends React.Component {
 
 	render(){
 
-		const {name,email,message,subject,sentMessage } = this.state
+		const { name , email , message , subject , sentMessage } = this.state
 
 	
   return (
@@ -173,7 +173,7 @@ class contact extends React.Component {
 									</div>
 								</div>
 								<div class="col-md-5 order-md-first d-flex align-items-stretch">
-									{/* <div id="map" class="map"></div> */}
+									
 								</div>
 							</div>
                 </div>

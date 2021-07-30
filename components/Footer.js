@@ -9,7 +9,9 @@ class Footer extends React.Component {
   state = {
 		contact:{},
     slideshow:{},
-    about:{}
+    about:{},
+    email: '',
+    SuccessMessage: ''
 		}
 
 	componentDidMount(){
@@ -32,11 +34,57 @@ class Footer extends React.Component {
 		})
 	}
 
+  
+	onSubmit = (e) => {
+		e.preventDefault();
+		const { email } = this.state
+	
+		  const newSubscriber = {
+
+			Email: email,
+      Active: true
+	
+		  }
+	
+
+		//   send to the backend
+    axios.get(`${backend}/subscribers`)
+    .then(res => {
+      console.log(res.data);
+      let IsSubscibed = false
+      res.data.forEach(subscriber => {
+        if (subscriber.Email == email) {
+          IsSubscibed = true
+        }
+      });
+
+      if (!IsSubscibed) {
+
+        axios.post(`${backend}/subscribers`, newSubscriber)
+        .then(response => {
+
+			  this.setState({ SuccessMessage: 'Thank you for Subscribing ! '})
+     
+		    })
+      }else {
+        this.setState({ SuccessMessage: 'Opps, it seems you already subscribed ! '})
+      }
+
+    })
+    
+		
+   
+			
+
+	  };
+	
+	onChange = (e) => this.setState({ [e.target.name]: e.target.value });
+
+
   getContact = () => (this.state.contact)
 
   render(){
-
-    console.log(this.state.contact);
+    const { email } = this.state
 
     ContactData = this.state.contact;
   return (
@@ -48,7 +96,14 @@ class Footer extends React.Component {
           <div class="col-sm-12 col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2 logo"><a href="/">{this.state.slideshow.AppName}</a></h2>
-              <p>{this.state.about.AboutSite}</p>
+              <p>{this.state.about.AboutSite}{email}</p>
+              <form  onSubmit={this.onSubmit} class="search-form">
+                <div class="form-group">
+                  <input type="email" class="form-contro mt-1 mb-1 p-1" placeholder="Your mail"  name="email" onChange={this.onChange} value={email} required/>
+                  <button type="submit" className="btn btn-md btn-success">Subscribe </button>
+                  <p>{this.state.SuccessMessage}</p>
+                </div>
+              </form>
               <ul class="ftco-footer-social list-unstyled mt-2">
                 <li class="ftco-animate"><a href={`${this.state.contact.twitter_Link}`}><span class="fa fa-twitter"></span></a></li>
                 <li class="ftco-animate"><a href={`${this.state.contact.facebook_Link}`}><span class="fa fa-facebook"></span></a></li>

@@ -26,7 +26,7 @@ class Nav extends React.Component {
 	}
 
 render(){
-console.log(this.state.contact);
+
   return (
   
     <>
@@ -55,7 +55,7 @@ console.log(this.state.contact);
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      {/* <a class="navbar-brand" href="/">{this.state.slideshow.AppName}</a> */}
+
 		  <a class="navbar-brand" href="/">
 		  <img width='100%' height='50' src="http://localhost:1337/uploads/Group_4_5d759c3286.png" alt="Picture of the author" />			</a> 
 		  <h4 class="text-secondary">{this.state.slideshow.AppName}</h4>
@@ -64,15 +64,28 @@ console.log(this.state.contact);
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
+
 	        <ActivateLinks />
+			<input type="field" style={searchStyle} placeholder="   Search" className="text-secondary"/>
+
 	      </div>
 	    </div>
 	  </nav>
     
     </>
+
   )
-}
+
+ }
+
 }
 
 
 export default Nav
+
+
+const searchStyle = {
+
+	marginLeft: '2px'
+
+}

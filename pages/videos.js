@@ -7,17 +7,26 @@ import { backend } from '../config'
 
 
 const videos = ({posts, smallcaption, Caption , pagename, heading, imagepath}) => {
-	return (
-		<Fragment>
-			<PageHeader pagename={pagename} heading={heading} imagepath={imagepath} />
-			 <PostList posts={[...posts,...posts,...posts]} smallcaption={smallcaption} Caption={Caption} />
-		</Fragment>
-	) 
+	if(posts.length > 0){
+		return (
+			<Fragment>
+				<PageHeader pagename={pagename} heading={heading} imagepath={imagepath} />
+				 <PostList posts={posts} smallcaption={smallcaption} Caption={Caption} />
+			</Fragment>
+		) 
+	}else return (
+			<Fragment>
+				<PageHeader pagename={pagename} heading={heading} imagepath={imagepath} />
+				 <p className="card mt-3 mb-3  container alert"> <h2>There are no videos yet</h2></p>
+			</Fragment>
+
+		)
 	}
 
 export const getStaticProps = async () => {
   const res = await fetch(`http://localhost:1337/posts`)
-  const posts = await res.json()
+  let posts = await res.json()
+  posts = posts.filter(post => (post.Type == 'Videos'))
 
   return {
     props: {
@@ -26,7 +35,7 @@ export const getStaticProps = async () => {
 	  Caption: 'Videos',
 	  pagename: 'Videos',
 	  heading : 'Watch Now',
-	  imagepath : `${backend}/uploads/mohammad_rahmani_Fx34_Keq_I_Ew_unsplash_228c036ba4.jpg?4456400.899999976`
+	  imagepath : `/uploads/mohammad_rahmani_Fx34_Keq_I_Ew_unsplash_228c036ba4.jpg?4456400.899999976`
     },
   }
 }

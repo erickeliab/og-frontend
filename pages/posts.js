@@ -9,7 +9,7 @@ const laserfiche = ({posts, smallcaption, Caption , pagename, heading, imagepath
 			<PageHeader pagename={pagename} heading={heading} imagepath={imagepath} />
 			 <PostList posts={posts} smallcaption={smallcaption} Caption={Caption} />
 		</Fragment>
-	) 
+		) 
 	}
 
 export const getStaticProps = async () => {

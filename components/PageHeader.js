@@ -1,3 +1,5 @@
+import { backend } from "../config"
+
 
 export default function PageHeader({pagename,heading,imagepath}){
     return <>
@@ -19,7 +21,7 @@ export default function PageHeader({pagename,heading,imagepath}){
 
 const headerStyle = (imagepath) => ({
 
-    backgroundImage: imagepath ? 'url(' + `${imagepath}` + ')' : 'url(' + 'http://localhost:1337/uploads/image_2_bc89942dc6.png' + ')',
+    backgroundImage: imagepath ? 'url(' + `${backend}${imagepath}` + ')' : 'url(' + 'http://localhost:1337/uploads/image_2_bc89942dc6.png' + ')',
     paddingTop: '0 px !important',
     margin: '0 px'
 

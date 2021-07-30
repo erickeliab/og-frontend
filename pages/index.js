@@ -6,9 +6,13 @@ import Header from '../components/Header'
 import Meta from '../components/Meta'
 import Slideshow from '../components/Slideshow'
 import { backend } from '../config'
+import Testimonial from '../components/testimonial'
+import Slider from '../components/Slider'
+
+
 
 export default function Home({ posts, other}) {
-  //console.log(posts)
+  // console.log(posts)
   return (
 	  <>
 	   <Meta title='OG - Home' />
@@ -63,11 +67,21 @@ export default function Home({ posts, other}) {
 	<PostList posts={posts} smallcaption={'learn'} Caption={'Laserfiche'} />
 	<VideoList posts={[...posts,posts[0]]} smallcaption={'watch'} Caption={'Videos'} />
 	<PostList posts={posts} smallcaption={'stream'} Caption={'Games'}  />
+	<Slider />
 
-
-
+	
 	  <section class="ftco-counter ftco-section ftco-no-pt mt-4 ftco-no-pb img mb-5" id="section-counter">
     	<div class="container">
+		<div class="container">
+         
+               
+                    <div class="row justify-content-center pb-5">
+                <div class="col-md-7 heading-section text-center ftco-animatee">
+                    <span class="subheading">Laserfiche</span>
+                    <h2> Projects</h2>
+                </div>
+                </div>
+                </div>
     		<div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch counter-wrap ftco-animatee">
             <div class="block-18 py-4 w-100">
@@ -108,6 +122,7 @@ export default function Home({ posts, other}) {
         </div>
     	</div>
     </section>
+	
 	</>
 
 

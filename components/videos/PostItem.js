@@ -9,7 +9,7 @@ const PostItem = ({ post }) => {
       <div class="col-md-3 d-flex ftco-animat">
 				<div class="blog-entry justify-content-end">
 				<div class="text text-center card">
-					<a href="blog-single.html" class="block-20 img d-flex align-items-center" style={{"background-image": `url(${backend}${post.CoverPhoto});`}}>
+					<a  class="block-20 img d-flex align-items-center" style={{"background-image": `url(${backend}${post.CoverPhoto});`}}>
 						<div class="meta text-center mb-2 d-flex align-items-center justify-content-center">
 						  <div>
 						  	<span class="day">OPEN</span>
