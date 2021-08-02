@@ -7,6 +7,8 @@ import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import Router, { withRouter } from 'next/router'
 import { backend } from '../config';
+import PostLoading from '../components/posts/PostLoading';
+
 
 
 
@@ -49,7 +51,7 @@ const Laserfiche = (props) => {
         //Conditional rendering of the posts list or loading indicator
     let content = null;
     if (isLoading)
-        content = <div>Loading...</div>;
+        content = <PostLoading />;
     else {
                 //Generating posts list
 
@@ -122,7 +124,7 @@ Laserfiche.getInitialProps = async ({ query }) => {
 	  	Caption: 'Laserfiche',
 	  	pagename: 'Laserfiche',
 	  	heading : 'Learn Now',
-	  	imagepath : 'images/og-bg.jpg'
+	  	imagepath : `/uploads/balkouras_nicos_nc_O_Qx_Ze8_Krw_unsplash_0f19813128.jpg`
     };
 }
 

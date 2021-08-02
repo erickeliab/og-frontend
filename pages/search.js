@@ -1,51 +1,5 @@
-// import Meta from '../components/Meta'
-// import PostList from '../components/videos/PostList'
-// import { Fragment } from 'react'
-// import PageHeader from '../components/PageHeader'
-// import { backend } from '../config'
-
-
-
-// const videos = ({posts, smallcaption, Caption , pagename, heading, imagepath}) => {
-// 	if(posts.length > 0){
-// 		return (
-// 			<Fragment>
-// 				<PageHeader pagename={pagename} heading={heading} imagepath={imagepath} />
-// 				 <PostList posts={posts} smallcaption={smallcaption} Caption={Caption} />
-// 			</Fragment>
-// 		) 
-// 	}else return (
-// 			<Fragment>
-// 				<PageHeader pagename={pagename} heading={heading} imagepath={imagepath} />
-// 				 <p className="card mt-3 mb-3  container alert"> <h2>There are no videos yet</h2></p>
-// 			</Fragment>
-
-// 		)
-// 	}
-
-// export const getStaticProps = async () => {
-//   const res = await fetch(`http://localhost:1337/posts`)
-//   let posts = await res.json()
-//   posts = posts.filter(post => (post.Type == 'Videos'))
-
-//   return {
-//     props: {
-//       posts,
-// 	  smallcaption: 'Watch',
-// 	  Caption: 'Videos',
-// 	  pagename: 'Videos',
-// 	  heading : 'Watch Now',
-// 	  imagepath : `/uploads/mohammad_rahmani_Fx34_Keq_I_Ew_unsplash_228c036ba4.jpg?4456400.899999976`
-//     },
-//   }
-// }
-
-// export default videos
-
-
-
 import Meta from '../components/Meta'
-import PostList from '../components/videos/PostList'
+import PostList from '../components/search/PostList'
 import { Fragment } from 'react'
 import PageHeader from '../components/PageHeader'
 import React, { useState, useEffect } from 'react';
@@ -57,8 +11,9 @@ import PostLoading from '../components/posts/PostLoading';
 
 
 
+
    
-const videos = (props) => {
+const Laserfiche = (props) => {
     const [isLoading, setLoading] = useState(false); //State for the loading indicator
     const startLoading = () => setLoading(true);
     const stopLoading = () => setLoading(false);
@@ -114,7 +69,7 @@ const videos = (props) => {
 								</Fragment>
 					
 						)
-					}
+						}
    
     
 
@@ -146,11 +101,22 @@ const videos = (props) => {
 };
 
 //Fetching posts in get Intial Props to make the app seo friendly
-videos.getInitialProps = async ({ query }) => {
+Laserfiche.getInitialProps = async ({ query }) => {
     const page = query.page || 1; //if page empty we request the first page
+    const search = query.search || '';
     const limit = 4
     const start = limit * (page-1);
-    const postx = await axios.get(`${backend}/posts?Type=Videos&_start=${start}&_limit=${limit}`);
+    let LaserfichePosts;
+    let GamingPosts;
+    let VideosPosts;
+    if(search !== '') {
+        LaserfichePosts = await axios.get(`${backend}/posts?_where[_or][0][Title_contains]=${search}&_where[_or][1][body_contains]=${search}&_start=${start}&_limit=${limit}`);
+
+    }else {
+
+        LaserfichePosts = {data:[]}
+
+    }
     //  console.log(posts.data)
 	
     const coun = await axios.get(`${backend}/posts/count`)
@@ -164,14 +130,14 @@ videos.getInitialProps = async ({ query }) => {
         pageCount: pagecount,
         currentPage: page,
         perPage: limit,
-        posts: postx.data,
-		smallcaption: 'Watch',
-	  Caption: 'Videos',
-	  pagename: 'Videos',
-	  heading : 'Watch Now',
-	  imagepath : `/uploads/mohammad_rahmani_Fx34_Keq_I_Ew_unsplash_228c036ba4.jpg?4456400.899999976`
+        posts: LaserfichePosts.data,
+		smallcaption: 'search',
+	  	Caption: 'Results',
+	  	pagename: 'Search',
+	  	heading : search,
+	  	imagepath : `/uploads/balkouras_nicos_nc_O_Qx_Ze8_Krw_unsplash_0f19813128.jpg`
     };
 }
 
 
-export default withRouter(videos);
+export default withRouter(Laserfiche);

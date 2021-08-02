@@ -64,18 +64,16 @@ export default function Home({ posts, other}) {
       
     </div>
 
-	<PostList posts={posts} smallcaption={'learn'} Caption={'Laserfiche'} />
-	<VideoList posts={[...posts,posts[0]]} smallcaption={'watch'} Caption={'Videos'} />
-	<PostList posts={posts} smallcaption={'stream'} Caption={'Games'}  />
+	<PostList posts={posts.filter(post => (post.Type == 'Laserfiche'))} smallcaption={'learn'} Caption={'Laserfiche'} />
+	<VideoList posts={[...posts.filter(post => (post.Type == 'Videos')),posts.filter(post => (post.Type == 'Videos'))[0]]} smallcaption={'watch'} Caption={'Videos'} />
+	<PostList posts={posts.filter(post => (post.Type == 'Gaming'))} smallcaption={'stream'} Caption={'Games'}  />
 	<Slider />
 
 	
 	  <section class="ftco-counter ftco-section ftco-no-pt mt-4 ftco-no-pb img mb-5" id="section-counter">
     	<div class="container">
 		<div class="container">
-         
-               
-                    <div class="row justify-content-center pb-5">
+        <div class="row justify-content-center pb-5">
                 <div class="col-md-7 heading-section text-center ftco-animatee">
                     <span class="subheading">Laserfiche</span>
                     <h2> Projects</h2>

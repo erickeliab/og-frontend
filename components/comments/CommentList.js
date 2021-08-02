@@ -7,7 +7,7 @@ import { backend } from '../../config';
 
 class CommentList extends React.Component {
   state = {
-    comments : this.props.comments,
+    comments : this.props.post.comments,
     name: '',
     email: '',
     comment: '',

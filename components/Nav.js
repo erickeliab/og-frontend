@@ -3,6 +3,7 @@ import React from "react"
 import { backend } from "../config"
 import ActivateLinks from "./ActivateLinks"
 import Image from 'next/image'
+import SearchForm from "./search/form"
 
 
 class Nav extends React.Component {
@@ -66,12 +67,12 @@ render(){
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 
 	        <ActivateLinks />
-			<input type="field" style={searchStyle} placeholder="   Search" className="text-secondary"/>
+			<SearchForm />
 
 	      </div>
 	    </div>
 	  </nav>
-    
+	 
     </>
 
   )
@@ -84,8 +85,3 @@ render(){
 export default Nav
 
 
-const searchStyle = {
-
-	marginLeft: '2px'
-
-}

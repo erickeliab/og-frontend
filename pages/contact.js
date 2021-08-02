@@ -60,7 +60,15 @@ class contact extends React.Component {
 		
 		axios.post(`${backend}/messages`, newMessage)
         .then(response => {
-			this.setState({ sentMessage: 'Thank you ! Your Message Is Successfully Sent' })
+			this.setState({
+				 sentMessage: 'Thank you ! Your Message Is Successfully Sent',
+				 message: '',
+				 email: '',
+				 subject: '',
+				 name: ''
+		 })
+
+
 		})
 			
 			

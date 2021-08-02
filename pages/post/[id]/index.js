@@ -8,6 +8,7 @@ import PostSection from '../../../components/posts/PostSection';
 import RelatedPost from '../../../components/posts/RelatedPost'
 import PostList from '../../../components/posts/PostList'
 import CommentList from '../../../components/comments/CommentList'
+import VideoList from '../../../components/videos/VideoList'
 
 
 const post = ({ post, categories, posts }) => {
@@ -25,8 +26,9 @@ const post = ({ post, categories, posts }) => {
       <div class="container">
         <div class="row">
           <div class="col-lg-8 ftco-animatee mb-2">
-            <PostSection title={post.Title} body={post.body} article={false}/>
+            <PostSection title={post.Title ? post.Title : ''} body={post.body ? post.body : ''} article={false} videos={post.videos}/>
              {articles}
+
 
             <CategoryList categories={post.categories} />
             <CommentList comments={post.comments} post={post}/>
@@ -38,7 +40,7 @@ const post = ({ post, categories, posts }) => {
               <div class="categories">
                 <h3>Articles</h3>
                 {articlesLinst}
-               
+                
               </div>
             </div>
 

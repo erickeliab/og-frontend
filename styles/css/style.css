@@ -492,7 +492,28 @@ pre {
   width: 100%;
 }
 
+.ogvideo{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+}
+
+#postbody > p > img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+}
+
 #postbod > p > img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+}
+
+#postbod > div > p > img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
