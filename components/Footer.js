@@ -164,8 +164,8 @@ class Footer extends React.Component {
 	          <div class="col-md-12">
 		
 	            <p class="mb-0" style={{color: "rgba(255,255,255,.5)"}}>
-	  Copyright &copy;<script>{new Date().getFullYear()}</script><a href="https://og.com" target="_blank">og.com</a>
-	  </p>
+              Copyright &copy;<script>{new Date().getFullYear()}</script><a href="https://og.com" target="_blank">og.com</a>
+              </p>
 	          </div>
 	        </div>
       	</div>

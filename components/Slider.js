@@ -46,58 +46,51 @@ const Slider = () => {
                 </div>
 
                 <div class="site-blocks-cove">
-                <div class="img-wrap" style={{backgroundImage: `url("testimonialasset/images/hero_2.jpg")`}}>
+                <div class="img-wrap" style={{backgroundImage: `url("images/testimonial-background.jpg")`}}>
                     <div class="owl-carousel slide-one-item hero-slider">
-                    {/* <div class="slide">
-                       <img src="testimonialasset/images/hero_1.jpg" alt="Free Website Template by Free-Template.co" /> 
-                        <div class="heading">
-                        <h1 class="text-white font-weight-bold">The Studio</h1>
-                        </div>
-                        <div class="text sub-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi omnis qui distinctio.</p>
-                        <p><a href="https://free-template.co/" target="_blank" class="btn btn-outline-primary btn-md btn-pill">Start a project</a></p>
-                        </div>    
-                    </div> */}
-                    <div class="slide">
-                    <div class="card col-md-12 mt-5" style={{maxWidth: '540px'}}>
+                  
+                    <div class="slide container">
+                    <div class="card col-md-12 mt-5 mb-5" style={{maxWidth: '540px'}}>
                     <div class="row no-gutters">
-                        <div class="col-md-4">
-                        <img src="testimonialasset/images/hero_3.jpg" class="card-img" alt="..." />
+                        <div class="col-md-4 container">
+                        <img src="/images/mark.jpg" class="card-img img-circle mt-4 mb-4 " alt="..." />
                         </div>
                         <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                    
-                    <div class="slide row mt-5">
-
-                    <div class="card col-md-12 mt-5" style={{maxWidth: '540px'}}>
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                        <img src="testimonialasset/images/hero_2.jpg" class="card-img img-circle" alt="..." />
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Mark Zuckeberg</h5>
-                            <h6 class="card-title">Founder of Facebook</h6>
+                            <h5 class="card-title">Mark Zuckerberg</h5>
                             <p class="card-text">"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."</p>
-                            <p class="card-text"><small class="text-muted"></small></p>
+                            <p class="card-text container"><i class="fa fa-linkedin col-4 m-1" aria-hidden="true"></i>
+                            <i class="fa fa-twitter col-4 m-1" aria-hidden="true"></i></p>
                         </div>
                         </div>
                     </div>
                     </div>
-
-                    
-
-                    
                     </div>
-                    <div class="slide">
+
+
+                    <div class="slide container">
+                    <div class="card col-md-12 mt-5 mb-5" style={{maxWidth: '540px'}}>
+                    <div class="row no-gutters">
+                        <div class="col-md-4 container">
+                        <img src="/images/mark.jpg" class="card-img img-circle mt-4 mb-4 " alt="..." />
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Mark Zuckerberg</h5>
+                            <small className="text-dark">Facebook founder</small>
+                            <p class="card-text">"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."</p>
+                            <p class="card-text container"><i class="fa fa-linkedin col-4 m-1" aria-hidden="true"></i>
+                            <i class="fa fa-twitter col-4 m-1" aria-hidden="true"></i></p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+                    
+                   
+                    {/* <div class="slide">
                     <div class="card col-md-12 mt-5" style={{maxWidth: '540px'}}>
                     <div class="row no-gutters">
                         <div class="col-md-4">
@@ -112,7 +105,7 @@ const Slider = () => {
                         </div>
                     </div>
                     </div> 
-                    </div>
+                    </div> */}
                    
                     </div>
                 </div>

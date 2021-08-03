@@ -75,11 +75,15 @@ const Testimonial = (props) => {
                         </div>    
                     </div> */}
                     <div class="slide">
-                        <img src="testimonialasset/images/hero_2.jpg" alt="Free Website Template by Free-Template.co" />  
+                        <img src="images/pic1.jpg" alt="Free Website Template by Free-Template.co" />  
+                    </div>
+
+                    <div class="slide">
+                        <img src="images/pic3.jpg" alt="Free Website Template by Free-Template.co" />  
                     </div>
                     
                     <div class="slide">
-                        <img src="testimonialasset/images/hero_3.jpg" alt="Free Website Template by Free-Template.co" />  
+                        <img src="images/pic2.jpg" alt="Free Website Template by Free-Template.co" />  
                     </div>
                     
                    

@@ -2,16 +2,16 @@ import headerStyles from '../styles/Header.module.css'
 import Slideshow from './Slideshow'
 import { fetchdata } from '../core/fetch'
 import Link from 'next/link'
+import { backend } from '../config';
 const axios = require('axios');
 let slide = {};
 
 export default function Header ({slide, contact}){
-console.log('slide');
-console.log(contact);
+
   return (
     <>
    
-       <div class="hero-wrap" style={slide.ShowcaseImage ? {"background-image": "url(http://localhost:1337"+slide.ShowcaseImage+")"} : {"background-image": "url(http://localhost:1337"+slide.post.CoverPhoto+")"}} data-stellar-background-ratio="0.5">
+       <div class="hero-wrap" style={slide.ShowcaseImage ? {"background-image": "url("+backend+slide.ShowcaseImage+")"} : {"background-image": "url("+backend+slide.post.CoverPhoto+")"}} data-stellar-background-ratio="0.5">
      <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center">

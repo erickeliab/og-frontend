@@ -67,7 +67,7 @@ export default function Home({ posts, other}) {
 	<PostList posts={posts.filter(post => (post.Type == 'Laserfiche'))} smallcaption={'learn'} Caption={'Laserfiche'} />
 	<VideoList posts={[...posts.filter(post => (post.Type == 'Videos')),posts.filter(post => (post.Type == 'Videos'))[0]]} smallcaption={'watch'} Caption={'Videos'} />
 	<PostList posts={posts.filter(post => (post.Type == 'Gaming'))} smallcaption={'stream'} Caption={'Games'}  />
-	<Slider />
+
 
 	
 	  <section class="ftco-counter ftco-section ftco-no-pt mt-4 ftco-no-pb img mb-5" id="section-counter">

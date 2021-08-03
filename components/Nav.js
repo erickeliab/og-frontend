@@ -9,7 +9,12 @@ import SearchForm from "./search/form"
 class Nav extends React.Component {
 	state = {
 		contact:{},
-		slideshow:{}
+		slideshow:{},
+		show: ''
+		}
+
+		Toggle = () => {
+			this.setState({show : this.state.show == '' ? 'show' : ''})
 		}
 
 	componentDidMount(){
@@ -58,13 +63,17 @@ render(){
 	    <div class="container">
 
 		  <a class="navbar-brand" href="/">
-		  <img width='100%' height='50' src="http://localhost:1337/uploads/Group_4_5d759c3286.png" alt="Picture of the author" />			</a> 
+		  <img width='100%' height='50' src={`${backend}/uploads/Group_4_5d759c3286.png`} alt="Picture of the author" />			</a> 
 		  <h4 class="text-secondary">{this.state.slideshow.AppName}</h4>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
+	      <button class="navbar-toggler" type="button" onClick = {this.Toggle} data-toggle="collapse"  aria-expanded="false" aria-label="Toggle navigation">
+		  {/* <button class="navbar-toggler" type="button" onClick = {this.Toggle} data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> */}
+
+	        <span class="oi oi-menu" hidden={this.state.show == '' ? false : true}><i class="fa fa-bars"></i></span>
+			<span class="oi oi-menu" hidden={this.state.show == ''? true : false}><i class="fa fa-times" aria-hidden="true"></i></span>
+			
 	      </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
+	      <div class={"collapse navbar-collapse " + this.state.show} id="ftco-nav">
 
 	        <ActivateLinks />
 			<SearchForm />
