@@ -110,7 +110,11 @@ Laserfiche.getInitialProps = async ({ query }) => {
     let GamingPosts;
     let VideosPosts;
     if(search !== '') {
-        LaserfichePosts = await axios.get(`${backend}/posts?_where[_or][0][Title_contains]=${search}&_where[_or][1][body_contains]=${search}&_where[_or][2][Type_contains]=${search}&_where[_or][3][articles.Body_contains]=${search}&_where[_or][4][articles.Title_contains]=${search}&_where[_or][5][categories.Name_contains]=${search}&_where[_or][6][categories.Description_contains]=${search}&_where[_or][7][comments.Body_contains]=${search}&_where[_or][8][videos.Title_contains]=${search}&_where[_or][9][videos.Description_contains]=${search}_limit=${limit}`);
+        LaserfichePosts = 
+         
+        // await axios.get(`${backend}/posts?_where[_or][0][Title_contains]=${search}&_where[_or][1][body_contains]=${search}&_where[_or][2][Type_contains]=${search}&_where[_or][3][articles.Body_contains]=${search}&_where[_or][4][articles.Title_contains]=${search}&_where[_or][5][categories.Name_contains]=${search}&_where[_or][6][categories.Description_contains]=${search}&_where[_or][7][comments.Body_contains]=${search}&_where[_or][8][videos.Title_contains]=${search}&_where[_or][9][videos.Description_contains]=${search}_limit=${limit}`);
+
+        await axios.get(`${backend}/posts?_where[_or][0][Title_contains]=${search}&_where[_or][1][body_contains]=${search}&_where[_or][2][Type_contains]=${search}&_limit=${limit}`);
 
     }else {
 

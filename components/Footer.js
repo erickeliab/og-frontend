@@ -11,6 +11,8 @@ class Footer extends React.Component {
     slideshow:{},
     about:{},
     email: '',
+    categories: [],
+    games: [],
     SuccessMessage: ''
 		}
 
@@ -31,6 +33,18 @@ class Footer extends React.Component {
 		.then(res => {
 		  const about = res.data;
 		  this.setState({ about });
+		})
+
+    axios.get(`${backend}/categories`)
+		.then(res => {
+		  const categories = res.data;
+		  this.setState({ categories });
+		})
+
+    axios.get(`${backend}/posts?Type=Gaming`)
+		.then(res => {
+		  const games = res.data;
+		  this.setState({ games });
 		})
 	}
 
@@ -84,7 +98,12 @@ class Footer extends React.Component {
   getContact = () => (this.state.contact)
 
   render(){
-    const { email } = this.state
+    const { email, categories, games } = this.state
+
+
+    const DisplayCat = categories.map(cat => ( <li><a href={`search?search=${cat.Name}`}><span class="fa fa-chevron-right mr-2"></span>{cat.Name}</a></li>))
+
+    const DisplayGames = games.map(game => ( <li><a href={`search?search=${game.Title}`}><span class="fa fa-chevron-right mr-2"></span>{game.Title}</a></li>))
 
     ContactData = this.state.contact;
   return (
@@ -115,10 +134,10 @@ class Footer extends React.Component {
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Links</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Laserfiche</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Videos</a></li>
+                <li><a href="/about"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                <li><a href="/contact"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
+                <li><a href="/laserfiche"><span class="fa fa-chevron-right mr-2"></span>Laserfiche</a></li>
+                <li><a href="/videos"><span class="fa fa-chevron-right mr-2"></span>Videos</a></li>
               </ul>
             </div>
           </div>
@@ -126,10 +145,7 @@ class Footer extends React.Component {
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Categories</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Form</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Ripository</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Mobile</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Workflow</a></li>
+                {DisplayCat}
               </ul>
             </div>
           </div>
@@ -137,10 +153,7 @@ class Footer extends React.Component {
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Games</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Fifa</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>GTA</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Assassin's Creed</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Speed Force</a></li>
+              {DisplayGames}
               </ul>
             </div>
           </div>
