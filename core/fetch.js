@@ -5,7 +5,7 @@ const axios = require('axios');
 
 export const fetchdata =  (entity) => {
     let ans;
-    axios.get(`http://localhost:1337/${entity}`)
+    axios.get(`https://og-backend-m4e47.ondigitalocean.app/${entity}`)
     .then(function (response) {
         console.log('response');
         console.log(response);

@@ -22,7 +22,7 @@ export default function Header ({slide, contact}){
 	            <p><a href="/contact" class="btn btn-primary py-3 px-4">Contact Me</a></p>
             </div>
           </div>
-          <Link href={`/post/${slide.post.id}`}>
+          <Link href={slide.post ? `/post/${slide.post.id}` : `/about`}>
           <a class="img-video  d-flex align-items-center justify-content-center">
           	<span class="fa fa-sticky-note-o"></span>
           </a>

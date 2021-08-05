@@ -2,6 +2,7 @@ import Meta from '../components/Meta'
 import PostList from '../components/posts/PostList'
 import { Fragment } from 'react'
 import PageHeader from '../components/PageHeader'
+import { backend } from '../config'
 
 const laserfiche = ({posts, smallcaption, Caption , pagename, heading, imagepath}) => {
 	return (
@@ -13,7 +14,7 @@ const laserfiche = ({posts, smallcaption, Caption , pagename, heading, imagepath
 	}
 
 export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:1337/posts`)
+  const res = await fetch(`${backend}/posts`)
   const posts = await res.json()
 
   return {

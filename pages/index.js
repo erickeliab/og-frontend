@@ -65,7 +65,7 @@ export default function Home({ posts, other}) {
     </div>
 
 	<PostList posts={posts.filter(post => (post.Type == 'Laserfiche'))} smallcaption={'learn'} Caption={'Laserfiche'} />
-	<VideoList posts={[...posts.filter(post => (post.Type == 'Videos')),posts.filter(post => (post.Type == 'Videos'))[0]]} smallcaption={'watch'} Caption={'Videos'} />
+	<VideoList posts={posts.filter(post => (post.Type == 'Videos'))} smallcaption={'watch'} Caption={'Videos'} />
 	<PostList posts={posts.filter(post => (post.Type == 'Gaming'))} smallcaption={'stream'} Caption={'Games'}  />
 
 

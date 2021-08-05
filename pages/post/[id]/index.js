@@ -15,7 +15,7 @@ const post = ({ post, categories, posts }) => {
 
   const articles = post.articles.map(article => (<PostSection title={article.Title} body={article.Body} article={true}/>))
   const articlesLinst = post.articles.map(article => (<li><a href={"#"+article.Title}>{article.Title}<span class="fa fa-chevron-right"></span></a></li>))
-  const relatedposts = posts.map(post => (<RelatedPost post={post} />))
+  const relatedposts = posts ? posts.map(post => (<RelatedPost post={post} />)) : '';
   return (
     <>
 
@@ -101,7 +101,7 @@ export const getStaticPaths = async () => {
   const res = await fetch(`${backend}/posts/`)
   const posts = await res.json()
 
-  const ids = posts.map((post) => post.id)
+  const ids = posts.length > 0 ?  posts.map((post) => post.id) : null
   const paths = ids.map((id) => ({ params: { id: id.toString() } }))
 
   return {

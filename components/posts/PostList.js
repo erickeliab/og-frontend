@@ -29,17 +29,7 @@ class PostList extends React.Component {
           <PostItem post={post} />
           
       ))}
-			{posts.map((post) => (
-          <PostItem post={post} />
-          
-      ))}
-
-      {posts.map((post) => (
-          <PostItem post={post} />
-          
-      ))}
 		
-			
 		  </div>
       </div>
 		</div>

@@ -176,8 +176,8 @@ class Footer extends React.Component {
       		<div class="row">
 	          <div class="col-md-12">
 		
-	            <p class="mb-0" style={{color: "rgba(255,255,255,.5)"}}>
-              Copyright &copy;<script>{new Date().getFullYear()}</script><a href="https://og.com" target="_blank">og.com</a>
+	            <p class="mb-0" style={Styling}>
+              Copyright &copy;<script>{new Date().getFullYear()}</script><a href="https://ogexperience.com" target="_blank">ogexperience.com</a>
               </p>
 	          </div>
 	        </div>
@@ -190,6 +190,16 @@ class Footer extends React.Component {
 }
 
 export default Footer
+
+const Styling = {
+
+    margin: 'auto',
+    width: '50%',
+    padding: '10px',
+    color: "rgba(255,255,255,.5)",
+    textAlign: 'center'
+
+}
 
 
 export const ContactDat = ContactData;
