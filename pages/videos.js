@@ -156,7 +156,7 @@ videos.getInitialProps = async ({ query }) => {
     const coun = await axios.get(`${backend}/posts/count`)
     
     const count = coun.data
-    const pagecount = count%4 > 0 ? Math.floor((count/4) + 1) : count/4;
+    const pagecount = count%limit > 0 ? Math.floor((count/limit) + 1) : count/limit;
 
 
     return {

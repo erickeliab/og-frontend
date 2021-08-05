@@ -15,8 +15,8 @@ const PostItem = ({ post }) => {
 			   <div class="text">
 			   <Link href={`/post/${post.id}`}>
 				   <>
-				 <h3 style={pointerStyle} class="heading"><a>{post.Title}</a></h3>
-				 <p style={pointerStyle} class="heading"><a>{post.body.substr('0','150')}</a></p>
+				 <h3 style={pointerStyle} class="heading"><a>{post?.Title}</a></h3>
+				 <p style={pointerStyle} class="heading"><a>{post.body?.substr('0','150')}</a></p>
 				 </>
 				 </Link>
 				 <div class="meta">

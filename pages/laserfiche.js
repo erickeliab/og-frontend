@@ -62,24 +62,7 @@ const Laserfiche = (props) => {
 									 <PostList posts={props.posts} smallcaption={props.smallcaption} Caption={props.Caption} />
 								</Fragment>
 							) 
-                            pagination =  <div className="container">
-                            <ReactPaginate
-                                previousLabel={'previous'}
-                                nextLabel={'next'}
-                                breakLabel={'...'}
-                                breakClassName={'break-me'}
-                                activeClassName={'active'}
-                                containerClassName={'pagination'}
-                                subContainerClassName={'pages pagination btn'}
-                
-                                initialPage={props.currentPage - 1}
-                                pageCount={props.pageCount}
-                                marginPagesDisplayed={2}
-                                pageRangeDisplayed={5}
-                                onPageChange={pagginationHandler}
-                            />
-                            </div>;
-                            
+                         
 						}else content = (
 								<Fragment>
 									<PageHeader pagename={props.pagename} heading={props.heading} imagepath={props.imagepath} />
@@ -95,7 +78,24 @@ const Laserfiche = (props) => {
         <div className="">
           
                 {content}
-                {pagination}
+                <div className="container">
+                            <ReactPaginate
+                                previousLabel={'previous'}
+                                nextLabel={'next'}
+                                breakLabel={'...'}
+                                breakClassName={'break-me'}
+                                activeClassName={'active'}
+                                containerClassName={'pagination'}
+                                subContainerClassName={'pages pagination btn'}
+                
+                                initialPage={props.currentPage - 1}
+                                pageCount={props.pageCount}
+                                marginPagesDisplayed={2}
+                                pageRangeDisplayed={5}
+                                onPageChange={pagginationHandler}
+                            />
+            </div>
+                            
 
            
         </div>
@@ -105,7 +105,7 @@ const Laserfiche = (props) => {
 //Fetching posts in get Intial Props to make the app seo friendly
 Laserfiche.getInitialProps = async ({ query }) => {
     const page = query.page || 1; //if page empty we request the first page
-    const limit = 4
+    const limit = 8
     const start = limit * (page-1);
     const postx = await axios.get(`${backend}/posts?Type=Laserfiche&_start=${start}&_limit=${limit}`);
     //  console.log(posts.data)
@@ -113,7 +113,7 @@ Laserfiche.getInitialProps = async ({ query }) => {
     const coun = await axios.get(`${backend}/posts/count`)
     
     const count = coun.data
-    const pagecount = count%4 > 0 ? Math.floor((count/4) + 1) : count/4;
+    const pagecount = count%limit > 0 ? Math.floor((count/limit) + 1) : count/limit;
 
 
     return {
