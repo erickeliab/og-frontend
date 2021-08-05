@@ -8,7 +8,7 @@ import Slideshow from '../components/Slideshow'
 import { backend } from '../config'
 import Testimonial from '../components/testimonial'
 import Slider from '../components/Slider'
-
+import axios from 'axios'
 
 
 export default function Home({ posts, other}) {
@@ -161,7 +161,17 @@ export const getStaticProps = async () => {
   const category = await fetch(`${backend}/categories`)
   const categories = await category.json()
 
+  // const laserp = await axios.get(`${backend}/posts?Type=Laserfiche&_sort=published_at:desc&_limit=4`);
+  // const vidip = await axios.get(`${backend}/posts?Type=Videos&_sort=published_at:desc&_limit=4`);
+  // const gamerp = await axios.get(`${backend}/posts?TypeGaming&_sort=published_at:desc&_limit=4`);
 
+  // return {
+  //   props: {
+  //     posts: {
+  //       laserp : laserp.data,
+  //       vidip : vidip.data,
+  //       gamerp : gamerp.data
+  //     }
 
   return {
     props: {
