@@ -9,9 +9,6 @@ import Router, { withRouter } from 'next/router'
 import { backend } from '../config';
 import PostLoading from '../components/posts/PostLoading';
 
-
-
-
    
 const Laserfiche = (props) => {
     const [isLoading, setLoading] = useState(false); //State for the loading indicator
@@ -50,8 +47,11 @@ const Laserfiche = (props) => {
         
         //Conditional rendering of the posts list or loading indicator
     let content = null;
+    let pagination = '';
     if (isLoading)
         content = <PostLoading />;
+
+       
     else {
                 //Generating posts list
 
@@ -62,6 +62,24 @@ const Laserfiche = (props) => {
 									 <PostList posts={props.posts} smallcaption={props.smallcaption} Caption={props.Caption} />
 								</Fragment>
 							) 
+                            pagination =  <div className="container">
+                            <ReactPaginate
+                                previousLabel={'previous'}
+                                nextLabel={'next'}
+                                breakLabel={'...'}
+                                breakClassName={'break-me'}
+                                activeClassName={'active'}
+                                containerClassName={'pagination'}
+                                subContainerClassName={'pages pagination btn'}
+                
+                                initialPage={props.currentPage - 1}
+                                pageCount={props.pageCount}
+                                marginPagesDisplayed={2}
+                                pageRangeDisplayed={5}
+                                onPageChange={pagginationHandler}
+                            />
+                            </div>;
+                            
 						}else content = (
 								<Fragment>
 									<PageHeader pagename={props.pagename} heading={props.heading} imagepath={props.imagepath} />
@@ -77,23 +95,7 @@ const Laserfiche = (props) => {
         <div className="">
           
                 {content}
-            <div className="container">
-			<ReactPaginate
-                previousLabel={'previous'}
-                nextLabel={'next'}
-                breakLabel={'...'}
-                breakClassName={'break-me'}
-                activeClassName={'active'}
-                containerClassName={'pagination'}
-                subContainerClassName={'pages pagination btn'}
-
-                initialPage={props.currentPage - 1}
-                pageCount={props.pageCount}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={5}
-                onPageChange={pagginationHandler}
-            />
-			</div>
+                {pagination}
 
            
         </div>
@@ -115,11 +117,11 @@ Laserfiche.getInitialProps = async ({ query }) => {
 
 
     return {
-        totalCount: count,
-        pageCount: pagecount,
+        totalCount: count ? count : 3,
+        pageCount: pagecount != null ? pagecount : 1,
         currentPage: page,
         perPage: limit,
-        posts: postx.data,
+        posts: postx.data.length ? postx.data : '',
 		smallcaption: 'learn',
 	  	Caption: 'Laserfiche',
 	  	pagename: 'Laserfiche',

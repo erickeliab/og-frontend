@@ -177,7 +177,7 @@ class Footer extends React.Component {
 	          <div class="col-md-12">
 		
 	            <p class="mb-0" style={Styling}>
-              Copyright &copy;<script>{new Date().getFullYear()}</script><a href="https://ogexperience.com" target="_blank">ogexperience.com</a>
+              Copyright &copy;<script>{new Date().getFullYear()}</script><a href="https://ogexperience.netlify.app" target="_blank">ogexperience.com</a>
               </p>
 	          </div>
 	        </div>

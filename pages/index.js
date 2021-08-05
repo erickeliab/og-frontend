@@ -13,6 +13,23 @@ import Slider from '../components/Slider'
 
 export default function Home({ posts, other}) {
   // console.log(posts)
+  let laserp = '';
+  let vidzz = '';
+  let gamzz = ''
+
+if (posts.length > 0){
+
+  laserp = posts.filter(post => (post.Type == 'Laserfiche')).length > 0 ? <PostList posts={posts.filter(post => (post.Type == 'Laserfiche'))} smallcaption={'learn'} Caption={'Laserfiche'} />
+  : '';
+  vidzz = posts.filter(post => (post.Type == 'Videos')).length > 0 ? <VideoList posts={posts.filter(post => (post.Type == 'Videos'))} smallcaption={'watch'} Caption={'Videos'} />
+  : '';
+   gamzz = posts.filter(post => (post.Type == 'Gaming')).length > 0 ? 	<PostList posts={posts.filter(post => (post.Type == 'Gaming'))} smallcaption={'stream'} Caption={'Games'}  />  : '';
+
+}
+
+
+
+
   return (
 	  <>
 	   <Meta title='OG - Home' />
@@ -64,10 +81,9 @@ export default function Home({ posts, other}) {
       
     </div>
 
-	<PostList posts={posts.filter(post => (post.Type == 'Laserfiche'))} smallcaption={'learn'} Caption={'Laserfiche'} />
-	<VideoList posts={posts.filter(post => (post.Type == 'Videos'))} smallcaption={'watch'} Caption={'Videos'} />
-	<PostList posts={posts.filter(post => (post.Type == 'Gaming'))} smallcaption={'stream'} Caption={'Games'}  />
-
+    {laserp}
+    {vidzz}
+    {gamzz}
 
 	
 	  <section class="ftco-counter ftco-section ftco-no-pt mt-4 ftco-no-pb img mb-5" id="section-counter">
