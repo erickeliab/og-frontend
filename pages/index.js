@@ -92,7 +92,7 @@ if (posts.length > 0){
         <div class="row justify-content-center pb-5">
                 <div class="col-md-7 heading-section text-center ftco-animatee">
                     <span class="subheading">Laserfiche</span>
-                    <h2> Projects</h2>
+                    <h2> Industries</h2>
                 </div>
                 </div>
                 </div>
@@ -102,7 +102,7 @@ if (posts.length > 0){
             	<span class="icon flaticon-checklist"></span>
               <div class="text align-items-center">
                 <strong class="number" data-number="390">0</strong>
-                <span>Form</span>
+                <span>Finance</span>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@ if (posts.length > 0){
             	<span class="icon flaticon-checklist"></span>
               <div class="text align-items-center">
                 <strong class="number" data-number="600">0</strong>
-                <span>Repository</span>
+                <span>Education</span>
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@ if (posts.length > 0){
             	<span class="icon flaticon-checklist"></span>
               <div class="text align-items-center">
                 <strong class="number" data-number="12">0</strong>
-                <span>Workflow</span>
+                <span>Judiciary</span>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ if (posts.length > 0){
             	<span class="icon flaticon-checklist"></span>
               <div class="text align-items-center">
                 <strong class="number" data-number="540">0</strong>
-                <span>Quickfield</span>
+                <span>Business</span>
               </div>
             </div>
           </div>
@@ -164,7 +164,6 @@ export const getStaticProps = async () => {
   // const laserp = await axios.get(`${backend}/posts?Type=Laserfiche&_sort=published_at:desc&_limit=4`);
   // const vidip = await axios.get(`${backend}/posts?Type=Videos&_sort=published_at:desc&_limit=4`);
   // const gamerp = await axios.get(`${backend}/posts?TypeGaming&_sort=published_at:desc&_limit=4`);
-
   // return {
   //   props: {
   //     posts: {
