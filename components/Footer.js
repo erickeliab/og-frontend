@@ -114,11 +114,11 @@ class Footer extends React.Component {
         <div class="row mb-5">
           <div class="col-sm-12 col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2 logo"><a href="/">{this.state.slideshow.AppName}</a></h2>
-              <p>{this.state.about.AboutSite}{email}</p>
+              {/* <h2 class="ftco-heading-2 logo"><a href="/">{this.state.slideshow.AppName}</a></h2> */}
+              <p>{this.state.about.AboutSite}</p>
               <form  onSubmit={this.onSubmit} class="search-form">
                 <div class="form-group">
-                  <input type="email" class="form-contro mt-1 mb-1 p-1" placeholder="Your mail"  name="email" onChange={this.onChange} value={email} required/>
+                  <input type="email" class="form-control mt-1 mb-1" placeholder="Your mail"  name="email" onChange={this.onChange} value={email} required/>
                   <button type="submit" className="btn btn-md btn-success">Subscribe </button>
                   <p>{this.state.SuccessMessage}</p>
                 </div>
