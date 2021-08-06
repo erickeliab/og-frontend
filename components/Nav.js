@@ -63,7 +63,7 @@ render(){
 	    <div class="container">
 
 		  <a class="navbar-brand" href="/">
-		  <img width='100%' height='50' src={`${backend}/uploads/Group_4_5d759c3286.png`} alt="Picture of the author" />			</a> 
+		  <img width='50' height='50' src={`${backend}/uploads/Group_4_5d759c3286.png`} alt="Picture of the author" />			</a> 
 		  <h4 class="text-secondary">{this.state.slideshow.AppName}</h4>
 	      <button class="navbar-toggler" type="button" onClick = {this.Toggle} data-toggle="collapse"  aria-expanded="false" aria-label="Toggle navigation">
 		  {/* <button class="navbar-toggler" type="button" onClick = {this.Toggle} data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"> */}
