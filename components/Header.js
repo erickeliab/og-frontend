@@ -20,7 +20,7 @@ export default function Header ({slide, contact}){
          </div>
        </div>
        <Link href={'slide.post' ? `/post/${'slide.post.id'}` : `/about`}>
-       <a class="img-video  d-flex align-items-center justify-content-center">
+       <a class="img-video  d-flex align-items-center v justify-content-center">
          <span class="fa fa-sticky-note-o"></span>
        </a>
        </Link>
