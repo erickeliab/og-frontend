@@ -6,6 +6,7 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head />
         <body>
+        
           <Main />
           <NextScript />
           
@@ -27,6 +28,8 @@ class MyDocument extends Document {
           {/* <script src="js/google-map.js"></script> */}
           <script src="js/main.js"></script>
         
+          <script src="js/tawk.js"></script>
+         
         </body>
       </Html>
     )
