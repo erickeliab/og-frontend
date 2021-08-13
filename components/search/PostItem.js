@@ -7,7 +7,7 @@ import CategoryList from '../category/CategoryList';
 const PostItem = ({ post }) => {
 	
   return (
-    <Link href={`/post/${post.id}`}>
+    <Link href={{ pathname: '/viewpost', query: { keyword: post.id } }}>
       <div class="col-md-12 m-1 row d-flex ftco-animat">
 		  <img className="col-md-4 mb-1" height="200" src={`${backend}${post?.CoverPhoto}`} />
 		  <div class="block-21 mb-4 col-md-8 d-flex mt-1">
