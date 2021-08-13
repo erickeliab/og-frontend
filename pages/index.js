@@ -9,10 +9,22 @@ import { backend } from '../config'
 import Testimonial from '../components/testimonial'
 import Slider from '../components/Slider'
 import axios from 'axios'
+import { useState } from 'react'
 
 
-export default function Home({ posts, other}) {
-  // console.log(posts)
+
+export default function Home({other}) {
+  const [posts,SetPosts] = useState([])
+  // const [other,SetOther] = useState([])
+
+  const propss = CreateProperties()
+
+  propss.then(results => {
+    // console.log(results.props);
+    SetPosts(results.props.posts)
+    // SetOther(results.props.other)
+  })
+  //  console.log(propss)
   let laserp = '';
   let vidzz = '';
   let gamzz = ''
@@ -143,6 +155,47 @@ if (posts.length > 0){
 
 
   )
+}
+
+const CreateProperties = async () => {
+  const res = await fetch(`${backend}/posts`)
+  const posts = await res.json()
+
+  const slideres = await fetch(`${backend}/slideshow`)
+  const slideshow = await slideres.json()
+
+  const contacts = await fetch(`${backend}/contact`)
+  const contact = await contacts.json()
+
+  const abouts = await fetch(`${backend}/about`)
+  const about = await abouts.json()
+
+  const category = await fetch(`${backend}/categories`)
+  const categories = await category.json()
+
+  // const laserp = await axios.get(`${backend}/posts?Type=Laserfiche&_sort=published_at:desc&_limit=4`);
+  // const vidip = await axios.get(`${backend}/posts?Type=Videos&_sort=published_at:desc&_limit=4`);
+  // const gamerp = await axios.get(`${backend}/posts?TypeGaming&_sort=published_at:desc&_limit=4`);
+  // return {
+  //   props: {
+  //     posts: {
+  //       laserp : laserp.data,
+  //       vidip : vidip.data,
+  //       gamerp : gamerp.data
+  //     }
+
+  return {
+    props: {
+      posts,
+	  other : {
+		slideshow,
+		contact,
+		about,
+		categories
+	  }
+	  
+    },
+  }
 }
 
 export const getStaticProps = async () => {
