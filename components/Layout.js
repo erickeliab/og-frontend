@@ -18,8 +18,8 @@ const Layout = ({ children }) => {
           {children}
         </main>
         <section section class="ftco-counter ftco-section ftco-no-pt mt-4 ftco-no-pb img mb-5" id="section-counter">
-        <Slider />
-        <Testimonial />
+        {/* <Slider />*/}
+        <Testimonial /> 
         </section>
         <Footer />
       </div>

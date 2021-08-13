@@ -85,7 +85,7 @@ if (posts.length > 0){
     {vidzz}
     {gamzz}
 
-	
+{/* 	
 	  <section class="ftco-counter ftco-section ftco-no-pt mt-4 ftco-no-pb img mb-5" id="section-counter">
     	<div class="container">
 		<div class="container">
@@ -135,7 +135,7 @@ if (posts.length > 0){
           </div>
         </div>
     	</div>
-    </section>
+    </section> */}
 	
 	</>
 
