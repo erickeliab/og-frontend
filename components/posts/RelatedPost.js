@@ -9,7 +9,7 @@ const RelatedPost = ({post}) => {
             <div class="block-21 mb-4 d-flex">
                
                 <div class="text">
-                <Link href={`/post/${post.id}`}>
+                <Link href={{ pathname: '/viewpost', query: { keyword: post.id } }}>
                   <h3 style={pointerStyle} class="heading"><a>{post.Title}</a></h3>
                   </Link>
                   <div class="meta">
