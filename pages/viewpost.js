@@ -47,7 +47,7 @@ const Post = ({query}) => {
     makearticlesLinst(post.articles.map(article => (<li><a href={"#"+article.Title}>{article.Title}<span class="fa fa-chevron-right"></span></a></li>)))
     makerelatedposts(posts ? posts.map(post => (<RelatedPost post={post} />)) : '');
     makecategiryList(post.categories.length > 0 ? <CategoryList categories={post.categories} /> : '');
-    makecommentList(post.comments.length > 0 ? <CommentList comments={post.comments} post={post}/> : '');
+    makecommentList(<CommentList comments={post.comments} post={post}/>);
 
   
   })
@@ -68,7 +68,8 @@ const Post = ({query}) => {
 
             {CategoryList}
             {commentList}
-
+            {/* <CommentList comments={post.comments} post={post} /> */}
+            
           </div> 
           <div class="col-lg-4 sidebar pl-lg-5 ftco-animatee mt-3">
             
