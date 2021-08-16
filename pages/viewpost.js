@@ -57,7 +57,7 @@ const Post = ({query}) => {
     <>
 
 <Meta title={post.Title} description={post.Title} />
-<PageHeader pagename={post.Type} heading={post.Title} imagepath={post.CoverPhoto} />
+<PageHeader pagename={post.Title} heading={''} imagepath={post.CoverPhoto} />
 
 <section class="ftco-section ftco-degree-bg">
       <div class="container">
