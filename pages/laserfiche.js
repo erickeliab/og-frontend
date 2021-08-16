@@ -58,7 +58,7 @@ const Laserfiche = (props) => {
 				if(props.posts.length > 0){
 							content =  (
 								<Fragment>
-									<PageHeader pagename={props.pagename} heading={props.heading} imagepath={props.imagepath} />
+									<PageHeader pagename={props.pagename} heading={''} imagepath={props.imagepath} />
 									 <PostList posts={props.posts} smallcaption={props.smallcaption} Caption={props.Caption} />
 								</Fragment>
 							) 
