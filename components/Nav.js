@@ -48,7 +48,7 @@ render(){
 					<div class="col-md-6 d-flex justify-content-md-end">
 						<div class="social-media">
 			    		<p class="mb-0 d-flex">
-						<a href={`${this.state.contact.facebook_Link}`} class="d-flex align-items-center justify-content-center"><span class="fa fa-youtube"><i class="sr-only">Facebook</i></span></a>
+						<a href={`https://www.youtube.com/channel/UCg5-cKBy21c3LY6UdFOtTQw`} class="d-flex align-items-center justify-content-center"><span class="fa fa-youtube"><i class="sr-only">Facebook</i></span></a>
 			    			<a href={`${this.state.contact.facebook_Link}`} class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
 			    			<a href={`${this.state.contact.twitter_Link}`} class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
 			    			<a href={`${this.state.contact.instagram_Link}`} class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
