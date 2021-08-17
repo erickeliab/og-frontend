@@ -506,6 +506,14 @@ pre {
   width: 100%;
 }
 
+#postbody > div > p {
+  color: black;
+}
+
+#postbod > div > p {
+  color: black;
+}
+
 #postbod > p > img {
   border: 1px solid #ddd;
   border-radius: 4px;

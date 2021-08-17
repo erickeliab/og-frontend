@@ -6,9 +6,9 @@ if (article) {
     return (
         <>
        
-        <section id={title} className='mt-1 mb-1 pb-2'>
+        <section id={title} className='mt-1 mb-1 pb-2 text-dark'>
             <h3>{title}</h3>
-            <p id='postbod' className="container" ><Markdown>{body}</Markdown></p>
+            <p id='postbod' className="container text-dark" ><Markdown>{body}</Markdown></p>
            
 
         </section>
@@ -19,9 +19,9 @@ if (article) {
     return (
         <>
          
-        <section id={title} className='mt-1 mb-1 pb-2'>
+        <section id={title} className='mt-1 mb-1 pb-2 text-dark'>
             <h1>{title}</h1>
-            <p id='postbody' className="container"><Markdown>{body}</Markdown></p>
+            <p id='postbody' className="container text-dark"><Markdown>{body}</Markdown></p>
            
         </section>
         {videoos}

@@ -19,8 +19,8 @@ const PostItem = ({ post }) => {
 						</div>
 					</div>
 				  </a>
-				<h3 class="heading mb-3"><a href="#">{post.Title?.substring('0','27')}</a></h3>
-				<p>{post.body?.substring('0','55')}</p>
+				<h3 class="heading mb-3"><a href="#">{post.Title?.substring('0','70')}</a></h3>
+				<p>{post.body?.substring('0','100')}</p>
 			  </div>
 			</div>
 		  </div>
