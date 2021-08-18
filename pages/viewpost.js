@@ -35,8 +35,7 @@ const Post = ({query}) => {
 
   axios.get(`${backend}/posts/`).then(function(res){
     getPosts(res.data)
-
-  })
+})
  
   axios.get(`${backend}/posts/${query.keyword}`).then(function(res){
     post = res.data;
@@ -66,7 +65,7 @@ const Post = ({query}) => {
             <PostSection title={post.Title ? post.Title : ''} body={post.body ? post.body : ''} article={false} videos={post.videos}/>
              {articles}
 
-            {CategoryList}
+            {categiryList}
             {commentList}
             {/* <CommentList comments={post.comments} post={post} /> */}
             
