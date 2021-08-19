@@ -16,7 +16,7 @@ const Meta = ({ title, keywords, description }) => {
 Meta.defaultProps = {
   title: 'The OG Experience',
   keywords: 'laserfiche, gaming, video tutorials',
-  description: 'Get contents concerning laserfiche, gaming and adventures from an experienced engineer',
+  description: 'Get contents concerning laserfiche, gaming and adventures from an experienced tech guy',
 }
 
 export default Meta
