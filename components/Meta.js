@@ -10,14 +10,7 @@ const Meta = ({ title, keywords, description }) => {
       <link rel='icon' href='http://localhost:1337/uploads/Group_4_5d759c3286.png' />
       <title>{title}</title>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-PRHM62Q6RK"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)}
-        gtag('js', new Date());
-
-        gtag('config', 'G-PRHM62Q6RK');
-      </script>
-
+      <script type="text/javascript" src="js/googleverification.js"></script>
     </Head>
   )
 }
