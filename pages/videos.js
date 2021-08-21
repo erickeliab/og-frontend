@@ -53,7 +53,7 @@ import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import Router, { withRouter } from 'next/router'
 import { backend } from '../config';
-import PostLoading from '../components/posts/PostLoading';
+import PostLoading from '../components/videos/PostLoading';
 
 
 

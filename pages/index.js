@@ -25,9 +25,33 @@ export default function Home({other}) {
     // SetOther(results.props.other)
   })
   //  console.log(propss)
-  let laserp = other.loadingPost;
-  let vidzz = other.loadingPost;
-  let gamzz = other.loadingPost;
+
+  const loadingPost = [
+    {
+      id : '',
+      Title : 'Loading...',
+      body: 'Loading...',
+      Type: 'Laserfiche',
+      published_at: 'Loading...'
+    },
+    {
+      id : '',
+      Title : 'Loading...',
+      body: 'Loading...',
+      Type: 'Loading...',
+      published_at: 'Loading...'
+    },
+    {
+      id : '',
+      Title : 'Loading...',
+      body: 'Loading...',
+      Type: 'Loading...',
+      published_at: 'Loading...'
+    }
+  ]
+  let laserp = <PostList posts={loadingPost} smallcaption={'learn'} Caption={'Laserfiche'} />;
+  let vidzz = <VideoList posts={[...loadingPost,loadingPost[0]]}  smallcaption={'watch'} Caption={'Videos'} />;
+  let gamzz = <PostList posts={loadingPost} smallcaption={'stream'} Caption={'Games'} />;
 
 if (posts.length > 0){
 
@@ -188,7 +212,20 @@ const CreateProperties = async () => {
     {
       id : '',
       Title : 'Loading...',
-      body: 'Loading...'
+      body: 'Loading...',
+      Type: 'Laserfiche'
+    },
+    {
+      id : '',
+      Title : 'Loading...',
+      body: 'Loading...',
+      Type: 'Laserfiche'
+    },
+    {
+      id : '',
+      Title : 'Loading...',
+      body: 'Loading...',
+      Type: 'Laserfiche'
     }
   ]
 

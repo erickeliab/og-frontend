@@ -6,7 +6,7 @@ import articleStyles from '../../styles/Article.module.css'
 const PostItem = ({ post }) => {
 	let content = '';
 
-	if (post) content =  <Link href={{ pathname: '/viewpost', query: { keyword: post.id } }}>
+	if (post) content =  <Link href={{ pathname: '/viewpost', query: { keyword: post.id, Title : post.Title.replace(/ /g, "") } }}>
 	<div class="col-md-3 d-flex ftco-animat">
 			  <div class="blog-entry justify-content-end">
 			  <div class="text text-center card">

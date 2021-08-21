@@ -32,7 +32,7 @@ class PostLoading extends React.Component {
         published_at: 'Loading...'
       }
     ]
-    let laserp = <PostList posts={loadingPost} smallcaption={'learn'} Caption={'Laserfiche'} />;
+    let laserp = <PostList posts={[...loadingPost,loadingPost[0]]} smallcaption={'watch'} Caption={'Videos'} />;
 
 
   return (
