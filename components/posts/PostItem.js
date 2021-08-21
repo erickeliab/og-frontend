@@ -10,7 +10,7 @@ const PostItem = ({ post }) => {
 	<div class="col-md-4 d-flex ftco-animat" style={{cursor: 'colResize'}}>
 			  <div class="blog-entry justify-content-end">
 			  <div class="text text-center">
-				  <a  class="block-20 img d-flex align-items-center" style={{"backgroundImage": `url(${backend}${post?.CoverPhoto})`}}>
+				  <a  class="block-20 img d-flex align-items-center" style={ post.CoverPhoto ? {"backgroundImage": `url(${backend}${post.CoverPhoto})`} :  {"backgroundImage": `url(images/defaults/${post.Type}.jpg)`}}>
 					  <div class="meta text-center mb-2 d-flex align-items-center justify-content-center">
 						<div>
 							<span class="day">{post?.published_at.substring('8','10')}</span>

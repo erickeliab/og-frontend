@@ -10,7 +10,7 @@ const PostItem = ({ post }) => {
 	<div class="col-md-3 d-flex ftco-animat">
 			  <div class="blog-entry justify-content-end">
 			  <div class="text text-center card">
-			  <a  class="block-20 img d-flex align-items-center" style={{"backgroundImage": `url(${backend}${post?.CoverPhoto})`}}>
+			  <a  class="block-20 img d-flex align-items-center" style={ post.CoverPhoto != null ? {"backgroundImage": `url(${backend}${post.CoverPhoto})`} :  {"backgroundImage": `url(images/defaults/video.jpg)`}}>
 					  <div class="meta text-center mb-2 d-flex align-items-center justify-content-center">
 						<div>
 							<span class="day">OPEN</span>
@@ -19,7 +19,10 @@ const PostItem = ({ post }) => {
 						</div>
 					</div>
 				  </a>
-				<h3 class="heading mb-3"><a href="#">{post.Title.substring('0','27')}</a></h3>
+				  <div className="container">
+				  <h6 class="heading mb-3"><a href="#">{post.Title.substring('0','27')}</a></h6>
+				  </div>
+			
 				
 			  </div>
 			</div>

@@ -25,9 +25,9 @@ export default function Home({other}) {
     // SetOther(results.props.other)
   })
   //  console.log(propss)
-  let laserp = '';
-  let vidzz = '';
-  let gamzz = ''
+  let laserp = other.loadingPost;
+  let vidzz = other.loadingPost;
+  let gamzz = other.loadingPost;
 
 if (posts.length > 0){
 
@@ -184,6 +184,14 @@ const CreateProperties = async () => {
   //       gamerp : gamerp.data
   //     }
 
+  const loadingPost = [
+    {
+      id : '',
+      Title : 'Loading...',
+      body: 'Loading...'
+    }
+  ]
+
   return {
     props: {
       posts,
@@ -191,7 +199,8 @@ const CreateProperties = async () => {
 		slideshow,
 		contact,
 		about,
-		categories
+		categories,
+    loadingPost
 	  }
 	  
     },

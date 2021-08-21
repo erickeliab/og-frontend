@@ -499,29 +499,61 @@ pre {
   width: 100%;
 }
 
-#postbody > p > img {
+#postbody > * > img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 100%;
 }
 
-#postbody > div > p {
+#postbod {
   color: black;
 }
 
-#postbod > div > p {
+#postbod > * {
   color: black;
 }
 
-#postbod > p > img {
+#postbody > * > * {
+  color: black;
+}
+
+#postbody > * > * > * {
+  color: black;
+}
+
+#postbody > * > * > * > *{
+  color: black;
+}
+
+#postbod {
+  color: black;
+}
+
+#postbod > * {
+  color: black;
+}
+
+#postbod > * > * {
+  color: black;
+}
+
+#postbod > * > * > * {
+  color: black;
+}
+
+#postbod > * > * > * > *{
+  color: black;
+}
+
+#postbod > * > img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 100%;
 }
 
-#postbod > div > p > img {
+#postbod > * > * > img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;

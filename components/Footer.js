@@ -138,6 +138,7 @@ class Footer extends React.Component {
                 <li><a href="/contact"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
                 <li><a href="/laserfiche"><span class="fa fa-chevron-right mr-2"></span>Laserfiche</a></li>
                 <li><a href="/videos"><span class="fa fa-chevron-right mr-2"></span>Videos</a></li>
+                <li><a href={""+backend+"/admin"}><span class="fa fa-chevron-right mr-2"></span>Admin</a></li>
               </ul>
             </div>
           </div>
