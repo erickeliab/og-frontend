@@ -7,6 +7,7 @@ const Meta = ({ title, keywords, description }) => {
       <meta name='keywords' content={keywords} />
       <meta name='description' content={description} />
       <meta charSet='utf-8' />
+      <meta name="google-site-verification" content="uMP9dLgiEOBWunUTz6NAqGZSVBiws9SQ8BZtK82fEpk" />
       <link rel='icon' href='http://localhost:1337/uploads/Group_4_5d759c3286.png' />
       <title>{title}</title>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-PRHM62Q6RK"></script>
