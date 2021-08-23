@@ -11,12 +11,12 @@ const ActivateLinks = () => {
     <>
 	
 	        <ul class="navbar-nav ml-auto">
-			<li class={"nav-item " + getActive(path,'/')}  ><a href="/" class="nav-link">Home</a></li>
-			<li class={"nav-item " + getActive(path,'/laserfiche')}><a href="/laserfiche" class="nav-link">Laserfiche</a></li>
-			<li class={"nav-item " + getActive(path,'/gaming')}><a href="/gaming" class="nav-link">Gaming</a></li>
-			<li class={"nav-item " + getActive(path,'/videos')}><a href="/videos" class="nav-link">Videos</a></li>
-			<li class={"nav-item " + getActive(path,'/about')}><a href="/about" class="nav-link">About</a></li>
-			<li class={"nav-item " + getActive(path,'/contact')}><a href="/contact" class="nav-link">Contact</a></li>
+			<li class={"nav-item " + getActive(path,'/')}  ><Link href="/"><a  class="nav-link">Home</a></Link></li>
+			<li class={"nav-item " + getActive(path,'/laserfiche')}><Link href="/laserfiche" class="nav-link"><a  class="nav-link">Laserfiche</a></Link></li>
+			<li class={"nav-item " + getActive(path,'/gaming')}><Link href="/gaming" class="nav-link"><a  class="nav-link">Gaming</a></Link></li>
+			<li class={"nav-item " + getActive(path,'/videos')}><Link href="/videos" class="nav-link"><a  class="nav-link">Videos</a></Link></li>
+			<li class={"nav-item " + getActive(path,'/about')}><Link href="/about" class="nav-link"><a  class="nav-link">About</a></Link></li>
+			<li class={"nav-item " + getActive(path,'/contact')}><Link href="/contact" class="nav-link"><a  class="nav-link">Contact</a></Link></li>
 	        </ul>
 	     
     

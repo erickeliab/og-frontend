@@ -55,8 +55,6 @@ class contact extends React.Component {
 		 
 
 		//   send to the backend
-	
-
 		
 		axios.post(`${backend}/messages`, newMessage)
         .then(response => {

@@ -148,7 +148,7 @@ const videos = (props) => {
 //Fetching posts in get Intial Props to make the app seo friendly
 videos.getInitialProps = async ({ query }) => {
     const page = query.page || 1; //if page empty we request the first page
-    const limit = 4
+    const limit = 8
     const start = limit * (page-1);
     const postx = await axios.get(`${backend}/posts?Type=Videos&_start=${start}&_limit=${limit}`);
     //  console.log(posts.data)

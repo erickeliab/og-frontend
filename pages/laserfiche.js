@@ -14,7 +14,21 @@ const Laserfiche = (props) => {
     const [isLoading, setLoading] = useState(false); //State for the loading indicator
     const startLoading = () => setLoading(true);
     const stopLoading = () => setLoading(false);
+    const [propc,SetProps] = useState({})
+    // const [other,SetOther] = useState([])
+  
+  
+    const propx = getEmProps(props.query);
 
+    propx.then(results => {
+    
+      SetProps(results)
+      
+    })
+
+  
+
+    
         /*
             Posts fetching happens after page navigation, 
             so we need to switch Loading state on Router events.
@@ -55,12 +69,31 @@ const Laserfiche = (props) => {
     else {
                 //Generating posts list
 
-				if(props.posts.length > 0){
+				if(props.posts?.length > 0){
+                    console.log(propc);
 							content =  (
 								<Fragment>
 									<PageHeader pagename={props.pagename} heading={''} imagepath={props.imagepath} />
-									 <PostList posts={props.posts} smallcaption={props.smallcaption} Caption={props.Caption} />
-								</Fragment>
+									 <PostList posts={props.posts} smallcaption={propc.smallcaption} Caption={propc.Caption} />
+								
+                                     <div className="container">
+                                <ReactPaginate
+                                previousLabel={'previous'}
+                                nextLabel={'next'}
+                                breakLabel={'...'}
+                                breakClassName={'break-me'}
+                                activeClassName={'active'}
+                                containerClassName={'pagination'}
+                                subContainerClassName={'pages pagination btn'}
+                
+                                initialPage={propc.currentPage - 1}
+                                pageCount={propc.pageCount}
+                                marginPagesDisplayed={2}
+                                pageRangeDisplayed={5}
+                                onPageChange={pagginationHandler}
+                            />
+            </div>
+                                </Fragment>
 							) 
                          
 						}else content = (
@@ -78,23 +111,7 @@ const Laserfiche = (props) => {
         <div className="">
           
                 {content}
-                <div className="container">
-                            <ReactPaginate
-                                previousLabel={'previous'}
-                                nextLabel={'next'}
-                                breakLabel={'...'}
-                                breakClassName={'break-me'}
-                                activeClassName={'active'}
-                                containerClassName={'pagination'}
-                                subContainerClassName={'pages pagination btn'}
-                
-                                initialPage={props.currentPage - 1}
-                                pageCount={props.pageCount}
-                                marginPagesDisplayed={2}
-                                pageRangeDisplayed={5}
-                                onPageChange={pagginationHandler}
-                            />
-            </div>
+               
                             
 
            
@@ -126,9 +143,42 @@ Laserfiche.getInitialProps = async ({ query }) => {
 	  	Caption: 'Laserfiche',
 	  	pagename: 'Laserfiche',
 	  	heading : 'Learn Now',
+	  	imagepath : `/uploads/balkouras_nicos_nc_O_Qx_Ze8_Krw_unsplash_0f19813128.jpg`,
+          query
+    };
+}
+
+
+
+//Fetching posts in get Intial Props to make the app seo friendly
+const getEmProps = async (param) => {
+
+    const page = param.page || 1; //if page empty we request the first page
+    const limit = 8
+    const start = limit * (page-1);
+    const postx = await axios.get(`${backend}/posts?Type=Laserfiche&_start=${start}&_limit=${limit}`);
+    //  console.log(posts.data)
+	
+    const coun = await axios.get(`${backend}/posts/count`)
+    
+    const count = coun.data
+    const pagecount = count%limit > 0 ? Math.floor((count/limit) + 1) : count/limit;
+
+
+    return {
+        totalCount: count ? count : 3,
+        pageCount: pagecount != null ? pagecount : 1,
+        currentPage: page,
+        perPage: limit,
+        posts: postx.data.length ? postx.data : '',
+		smallcaption: 'learn',
+	  	Caption: 'Laserfiche',
+	  	pagename: 'Laserfiche',
+	  	heading : 'Learn Now',
 	  	imagepath : `/uploads/balkouras_nicos_nc_O_Qx_Ze8_Krw_unsplash_0f19813128.jpg`
     };
 }
+
 
 
 export default withRouter(Laserfiche);
