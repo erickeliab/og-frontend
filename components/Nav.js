@@ -4,6 +4,7 @@ import { backend } from "../config"
 import ActivateLinks from "./ActivateLinks"
 import Image from 'next/image'
 import SearchForm from "./search/form"
+import Link from "next/dist/client/link"
 
 
 class Nav extends React.Component {
