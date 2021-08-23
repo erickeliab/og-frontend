@@ -59,7 +59,24 @@ const gaming = (props) => {
 								<Fragment>
 									<PageHeader pagename={props.pagename} heading={props.heading} imagepath={props.imagepath} />
 									 <PostList posts={props.posts} smallcaption={props.smallcaption} Caption={props.Caption} />
-								</Fragment>
+                                     <div className="container">
+                                        <ReactPaginate
+                                            previousLabel={'previous'}
+                                            nextLabel={'next'}
+                                            breakLabel={'...'}
+                                            breakClassName={'break-me'}
+                                            activeClassName={'active'}
+                                            containerClassName={'pagination'}
+                                            subContainerClassName={'pages pagination btn'}
+
+                                            initialPage={props.currentPage - 1}
+                                            pageCount={props.pageCount}
+                                            marginPagesDisplayed={2}
+                                            pageRangeDisplayed={5}
+                                            onPageChange={pagginationHandler}
+                                        />
+                                        </div>
+                                </Fragment>
 							) 
 						}else content = (
 								<Fragment>
@@ -76,23 +93,7 @@ const gaming = (props) => {
         <div className="">
           
                 {content}
-            <div className="container">
-			<ReactPaginate
-                previousLabel={'previous'}
-                nextLabel={'next'}
-                breakLabel={'...'}
-                breakClassName={'break-me'}
-                activeClassName={'active'}
-                containerClassName={'pagination'}
-                subContainerClassName={'pages pagination btn'}
-
-                initialPage={props.currentPage - 1}
-                pageCount={props.pageCount}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={5}
-                onPageChange={pagginationHandler}
-            />
-			</div>
+           
 
            
         </div>
