@@ -14,21 +14,21 @@ class PostLoading extends React.Component {
         id : '',
         Title : 'Loading...',
         body: 'Loading...',
-        Type: 'Loading...',
+        Type: 'Laserfiche',
         published_at: 'Loading...'
       },
       {
         id : '',
         Title : 'Loading...',
         body: 'Loading...',
-        Type: 'Loading...',
+        Type: 'Gaming',
         published_at: 'Loading...'
       },
       {
         id : '',
         Title : 'Loading...',
         body: 'Loading...',
-        Type: 'Loading...',
+        Type: 'Laserfiche',
         published_at: 'Loading...'
       }
     ]
