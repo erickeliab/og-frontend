@@ -62,8 +62,8 @@ const Post = ({query}) => {
       <div class="container">
         <div class="row">
           <div class="col-lg-8 ftco-animatee mb-2">
-            {/* <PostSection title={post.Title ? post.Title : ''} body={post.body ? post.body : ''} article={false} videos={post.videos}/> */}
-             {/* {articles} */}
+            <PostSection title={post.Title ? post.Title : ''} body={post.body ? post.body : ''} article={false} videos={post.videos}/>
+             {articles}
 
             {categiryList}
             {commentList}
