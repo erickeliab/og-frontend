@@ -21,7 +21,7 @@ export default function PageHeader({pagename,heading,imagepath}){
 
 const headerStyle = (imagepath) => ({
 
-    backgroundImage: imagepath ? 'url(' + `${backend}${imagepath}` + ')' : 'url(' + 'http://localhost:1337/uploads/image_2_bc89942dc6.png' + ')',
+    backgroundImage: imagepath ? 'url(' + `${backend}${imagepath}` + ')' : 'url(' + `${backend}/uploads/image_2_907b599ac8.png` + ')',
     paddingTop: '0 px !important',
     margin: '0 px'
 

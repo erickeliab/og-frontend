@@ -38,7 +38,7 @@ class about extends React.Component {
 					<div class="col-md-6 col-lg-3 ftco-animatee">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
-								<div class="img align-self-stretch" style={{backgroundImage: 'url(' + `${this.state.about.CoverPhotoLink}` + ')'}}></div>
+								<div class="img align-self-stretch" style={{backgroundImage: 'url(' + `${backend}${this.state.about.CoverPhotoLink}` + ')'}}></div>
 							</div>
 							<div class="text pt-3 text-center">
 								<h3>{this.state.about.FullName}</h3>
