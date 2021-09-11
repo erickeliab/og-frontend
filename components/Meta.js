@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import { backend } from '../config'
+import Head from 'next/head';
+import { backend } from '../config';
 
 const Meta = ({ title, keywords, description }) => {
+  
   return (
     <Head>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
