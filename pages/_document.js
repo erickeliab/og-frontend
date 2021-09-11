@@ -4,10 +4,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang='en'>
-        <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1716957230308002"
-            crossorigin="anonymous"></script>
-        </head>
+        <Head />
         <body>        
           <Main />
           <NextScript />
@@ -31,7 +28,6 @@ class MyDocument extends Document {
         
           <script src="js/tawk.js"></script>
          
-
         </body>
       </Html>
     )

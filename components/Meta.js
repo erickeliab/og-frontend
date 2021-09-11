@@ -12,6 +12,8 @@ const Meta = ({ title, keywords, description }) => {
       <title>{title}</title>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-PRHM62Q6RK"></script>
       <script type="text/javascript" src="js/googleverification.js"></script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1716957230308002"
+     crossorigin="anonymous"></script>
     </Head>
   )
 }

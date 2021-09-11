@@ -68,7 +68,7 @@ if (posts.length > 0){
 
   return (
 	  <>
-	   <Meta title='OG - Home' />
+	   {/* <Meta title='OG - Home' /> */}
 	  <Header slide={other.slideshow} contact={other.contact} />
     <div>
     
