@@ -42,8 +42,8 @@ render(){
 				<div class="row">
 					<div class="col-md-6 d-flex align-items-center">
 						<p class="mb-0 phone pl-md-2">
-							<a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span>{this.state.contact.phone}</a> 
-							<a href="#"><span class="fa fa-paper-plane mr-1"></span> {this.state.contact.email}</a>
+							<a href={"tel//"+this.state.contact.phone} class="mr-2"><span class="fa fa-phone mr-1"></span>{this.state.contact.phone}</a> 
+							<a href={this.state.contact.email}><span class="fa fa-paper-plane mr-1"></span> {this.state.contact.email}</a>
 						</p>
 					</div>
 					<div class="col-md-6 d-flex justify-content-md-end">
