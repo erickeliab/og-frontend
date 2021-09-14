@@ -111,7 +111,7 @@ class contact extends React.Component {
 				        			<span class="fa fa-phone"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Phone:</span> <a href="tel://1234567920">{this.state.contact.phone}</a></p>
+					            <p><span>Phone:</span> <a href={"tel://" + this.state.contact.phone}>{this.state.contact.phone}</a></p>
 					          </div>
 				          </div>
 								</div>
@@ -121,7 +121,7 @@ class contact extends React.Component {
 				        			<span class="fa fa-paper-plane"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Email:</span> <a href="mailto:info@yoursite.com">{this.state.contact.email}</a></p>
+					            <p><span>Email:</span> <a href={this.state.contact.email}>{this.state.contact.email}</a></p>
 					          </div>
 				          </div>
 								</div>
@@ -131,7 +131,7 @@ class contact extends React.Component {
 				        			<span class="fa fa-globe"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Website</span> <a href="#">{this.state.contact.website}</a></p>
+					            <p><span>Website</span> <a href={this.state.contact.website}>{this.state.contact.website}</a></p>
 					          </div>
 				          </div>
 								</div>
